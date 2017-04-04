@@ -1,9 +1,15 @@
 {
   "name": "pkgfmt",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Format your package.json file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "Daniel Król <daniel@krol.me>",
+  "respository": {
+    "type": "git",
+    "url": "git@github.com:mleko/pkgfmt.git"
+  },
   "bin": {
     "pkgfmt": "./dist/index.js",
     "package-format": "./dist/index.js"
@@ -12,8 +18,10 @@
     "test": "jest",
     "prepublishOnly": "tsc -d"
   },
-  "author": "Daniel Król <daniel@krol.me>",
-  "license": "MIT",
+  "dependencies": {
+    "es6-shim": "^0.35.3",
+    "yargs": "^7.0.2"
+  },
   "devDependencies": {
     "@types/es6-shim": "^0.31.32",
     "@types/jest": "^19.2.2",
@@ -24,10 +32,21 @@
     "tslint": "^5.0.0",
     "typescript": "^2.2.2"
   },
-  "dependencies": {
-    "es6-shim": "^0.35.3",
-    "yargs": "^7.0.2"
+  "bugs": {
+    "url": "https://github.com/mleko/pkgfmt/issues"
   },
+  "homepage": "https://github.com/mleko/pkgfmt",
+  "keywords": [
+    "format",
+    "lint",
+    "npm",
+    "install",
+    "sort",
+    "deps",
+    "dependencies",
+    "package",
+    "package.json"
+  ],
   "files": [
     "dist/"
   ],
