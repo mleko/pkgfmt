@@ -1,0 +1,45 @@
+{
+  "name": "pkgfmt",
+  "version": "0.0.1",
+  "description": "Format your package.json file",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "pkgfmt": "./dist/index.js",
+    "package-format": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "tsc -d"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.32",
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.12",
+    "@types/yargs": "^6.6.0",
+    "jest": "^19.0.2",
+    "ts-jest": "^19.0.7",
+    "tslint": "^5.0.0",
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "es6-shim": "^0.35.3",
+    "yargs": "^7.0.2"
+  },
+  "files": [
+    "dist/"
+  ],
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  },
+  "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
+}
