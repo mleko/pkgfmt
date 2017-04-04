@@ -1,6 +1,6 @@
 {
   "name": "pkgfmt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Format your package.json file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "test": "jest",
     "prepublishOnly": "tsc -d"
   },
-  "author": "",
+  "author": "Daniel Król <daniel@krol.me>",
   "license": "MIT",
   "devDependencies": {
     "@types/es6-shim": "^0.31.32",
