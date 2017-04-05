@@ -23,8 +23,8 @@ if (argv.quiet) {
 
 const pkgPath = argv._.length ? argv._[0] : process.cwd() + "/package.json";
 
-Logger.info(" > Format file: " + pkgPath);
+Logger.info("> Format file: " + pkgPath);
 
 formatPackage(pkgPath);
 
-Logger.info(" > Done");
+Logger.info("> Done");
