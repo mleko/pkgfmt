@@ -1,6 +1,7 @@
 #!/usr/bin/env node
+import {readFileSync, writeFileSync} from "fs";
 import * as yargs from "yargs";
-import {formatPackage} from "./formatPackage";
+import {formatPackage, stringify} from "./formatPackage";
 import {Logger} from "./Logger";
 
 const argv = yargs
@@ -25,6 +26,12 @@ const pkgPath = argv._.length ? argv._[0] : process.cwd() + "/package.json";
 
 Logger.info("> Format file: " + pkgPath);
 
-formatPackage(pkgPath);
+Logger.dbg("> Reading file: " + pkgPath);
+let pkg = JSON.parse(readFileSync(pkgPath, {encoding: "utf-8"}));
+
+pkg = formatPackage(pkg);
+
+Logger.dbg("> Writing to file: " + pkgPath);
+writeFileSync(pkgPath, stringify(pkg) + "\n");
 
 Logger.info("> Done");

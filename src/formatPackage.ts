@@ -1,14 +1,10 @@
-import {readFileSync, writeFileSync} from "fs";
 import {Logger} from "./Logger";
 import {sortObject} from "./sortObject";
 
 const objDeps = ["dependencies", "devDependencies", "peerDependencies", "optionalDependencies"];
 const arrDeps = ["bundledDependencies", "bundleDependencies"];
 
-export function formatPackage(filename: string) {
-	Logger.dbg("> Reading file: " + filename);
-	let pkg = JSON.parse(readFileSync(filename, {encoding: "utf-8"}));
-
+export function formatPackage(pkg: {[id: string]: any}) {
 	objDeps.forEach((key) => {
 		if (pkg[key]) {
 			Logger.notice("> Sorting " + key);
@@ -26,10 +22,9 @@ export function formatPackage(filename: string) {
 		}
 	});
 
-	Logger.dbg("> Writing to file: " + filename);
-	writeFileSync(filename, stringify(pkg) + "\n");
+	return pkg;
 }
 
-function stringify(obj) {
+export function stringify(obj) {
 	return JSON.stringify(obj, null, "  ");
 }
